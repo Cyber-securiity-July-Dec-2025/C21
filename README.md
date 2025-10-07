@@ -8,12 +8,6 @@ The GUI includes **Connect**, **Start**, **Stop**, and **Disconnect** buttons, a
 
 ---
 
-## 🧠 Theory
-
-For a complete understanding of the protocol and its implementation, see:
-
-* **Theoretical Working** — detailed explanation of Lamport’s one-way hash chain authentication, step-by-step message flow, verification logic, and security rationale.
-* **System Design** — architecture overview, module breakdown (Crypto, Config, Network, Controller, GUI), and message formats used for communication.
 
 ---
 
