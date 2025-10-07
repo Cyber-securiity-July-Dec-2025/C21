@@ -7,6 +7,7 @@
 
 ---
 
+<<<<<<< HEAD
 ## 📌 Cybersecurity Project – Group C21  
 
 **Team Members:**  
@@ -15,6 +16,8 @@
 - 👨‍💻 Arvind Kumar Munda  
 - 👨‍💻 Nikhil Chauhan  
 - 👨‍💻 Manoj Chauhan  
+=======
+>>>>>>> 1fc4115216c53bb930aef865f3cc1bb32e7deab7
 
 ---
 
