@@ -145,29 +145,34 @@ cd LamportAuth
 rm -rf build
 mkdir build
 cd build
-
+mac
+cmake -DCMAKE_CXX_COMPILER=clang++ -DQt6_DIR=$(brew --prefix)/opt/qt/lib/cmake/Qt6 ..
+cmake --build . -- -j$(sysctl -n hw.ncpu)
+linux
 cmake -DCMAKE_CXX_COMPILER=g++ -DQt6_DIR=/usr/lib/x86_64-linux-gnu/cmake/Qt6 ..
 cmake --build . -- -j$(nproc)
 
 ## ▶️ Running the Application
 
 ### Start Bob (Server)
-
+```
 ```bash
-./LamportAuth --server
+cd lamport-auth
+./build/lamport_app
 ```
 
 ### Start Alice (Client)
 
 ```bash
-./LamportAuth --client
+cd lamport-auth
+./build/lamport_app
 ```
 
 ### Example (with IP/Port from `config.txt`)
 
 ```bash
-./LamportAuth --server 8080
-./LamportAuth --client 127.0.0.1 8080
+./LamportAuth --server 5001
+./LamportAuth --client 127.0.0.1 5000
 ```
 
 ---
