@@ -7,7 +7,7 @@
 
 ---
 
-<<<<<<< HEAD
+
 ## 📌 Cybersecurity Project – Group C21  
 
 **Team Members:**  
@@ -17,7 +17,7 @@
 - 👨‍💻 Nikhil Chauhan  
 - 👨‍💻 Manoj Chauhan  
 =======
->>>>>>> 1fc4115216c53bb930aef865f3cc1bb32e7deab7
+
 
 ---
 
@@ -84,15 +84,39 @@ h0 → h1 = H(h0) → h2 = H(h1) → ... → hn
 ````
 
 LamportAuth/
-│── src/ # Source code
-│ ├── main.cpp
-│ ├── alice.cpp
-│ ├── bob.cpp
-│ └── ...
 │
-│── config.txt # Configuration (IP, port, sleep)
-│── CMakeLists.txt # Build setup
-│── README.md # Documentation
+├── build/                     # CMake build output (generated binaries)
+│
+├── src/                       # Application source code
+│   ├── app/                   # Application entry logic
+│   ├── controller/            # Main protocol controller (state handling)
+│   ├── crypto/                # Hashing, chain generation (Crypto++)
+│   ├── file/lamportchain/     # Hash chain implementation
+│   ├── gui/                   # Qt GUI components
+│   ├── mainwindow/            # Main window (buttons, signals, logs)
+│   ├── network/               # Networking layer
+│   │   ├── networkmanager.cpp/h
+│   ├── util/                  # Utility classes (helpers)
+│   ├── configmanager.cpp/h    # Config reader (JSON/TXT)
+│   ├── logger.cpp/h           # Logging utility
+│   └── main.cpp               # Application entry point
+│
+├── test/                      # Test scripts / unit test files
+│
+├── tools/                     # Utility tools (e.g., hash chain generator)
+│   └── gen_chain.cpp
+│
+├── alice_hn/                  # Alice's last known hash (hn)
+├── non_h0/                    # Bob's original seed (h0)
+│
+├── CMakeLists.txt             # Main CMake configuration
+├── cmake/                     # CMake module directory
+│
+├── config_alice.json          # Alice configuration (IP/Port)
+├── config_bob.json            # Bob configuration (IP/Port)
+│
+├── README.md                  # Project documentation
+└── LICENSE (if any)
 
 
 ````
@@ -118,12 +142,12 @@ cd LamportAuth
 ### 3. Build the Project
 
 ```bash
-mkdir build && cd build
-cmake ..
-make
-```
+rm -rf build
+mkdir build
+cd build
 
----
+cmake -DCMAKE_CXX_COMPILER=g++ -DQt6_DIR=/usr/lib/x86_64-linux-gnu/cmake/Qt6 ..
+cmake --build . -- -j$(nproc)
 
 ## ▶️ Running the Application
 
