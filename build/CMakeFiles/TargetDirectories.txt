@@ -1,0 +1,10 @@
+/home/bikram9932/c21/build/CMakeFiles/install/strip.dir
+/home/bikram9932/c21/build/CMakeFiles/install/local.dir
+/home/bikram9932/c21/build/CMakeFiles/install.dir
+/home/bikram9932/c21/build/CMakeFiles/list_install_components.dir
+/home/bikram9932/c21/build/CMakeFiles/rebuild_cache.dir
+/home/bikram9932/c21/build/CMakeFiles/edit_cache.dir
+/home/bikram9932/c21/build/CMakeFiles/config_test.dir
+/home/bikram9932/c21/build/CMakeFiles/lamport_app.dir
+/home/bikram9932/c21/build/CMakeFiles/config_test_autogen.dir
+/home/bikram9932/c21/build/CMakeFiles/lamport_app_autogen.dir

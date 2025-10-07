@@ -1,0 +1,39 @@
+cmake_minimum_required(VERSION 3.16)
+project(lamport_auth_demo LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find Qt5 (Widgets + Core + Network)
+find_package(Qt5 COMPONENTS Widgets Core Network REQUIRED)
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/src)
+
+# Enable automatic moc/uic/rcc
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+# Main executable
+add_executable(lamport_app
+    src/main.cpp
+    src/gui/MainWindow.cpp
+    src/gui/mainwindow.ui
+    src/network/NetworkManager.cpp
+    src/app/Controller.cpp
+    src/crypto/LamportChain.cpp
+    src/util/ConfigManager.cpp
+)
+
+target_include_directories(lamport_app PRIVATE src)
+target_link_libraries(lamport_app PRIVATE Qt5::Widgets Qt5::Core Qt5::Network)
+
+# Test executable
+add_executable(config_test
+    tests/config_test.cpp
+    src/util/ConfigManager.cpp
+)
+
+target_include_directories(config_test PRIVATE src src/util)
+target_link_libraries(config_test PRIVATE Qt5::Core)
